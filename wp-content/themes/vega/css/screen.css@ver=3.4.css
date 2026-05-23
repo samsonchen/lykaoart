@@ -5673,3 +5673,19 @@ h1.product_title
 
 /* Hide non-functional WordPress search (static GitHub Pages cannot honor ?s= queries). Delete this block to restore. */
 #searchform { display: none !important; }
+
+/* Stack the horizontal_gallery vertically on mobile. The original template renders the gallery as a single-row <table> that scrolls horizontally; on phone-width viewports the page caption fills the first cell and pushes every image off-screen to the right. Desktop layout is unaffected. */
+@media only screen and (max-width: 767px) {
+	#horizontal_gallery { overflow-x: visible; }
+	#horizontal_gallery_wrapper,
+	#horizontal_gallery_wrapper > tbody,
+	#horizontal_gallery_wrapper > tbody > tr,
+	#horizontal_gallery_wrapper > tbody > tr > td {
+		display: block !important;
+		width: 100% !important;
+		min-width: 0 !important;
+	}
+	#horizontal_gallery_wrapper > tbody > tr > td { padding: 15px 0 !important; text-align: center; }
+	#horizontal_gallery_wrapper tbody tr td .horizontal_gallery_info { width: auto !important; padding-right: 0 !important; text-align: center; }
+	#horizontal_gallery_wrapper img.horizontal_gallery_img { max-width: 100% !important; height: auto !important; }
+}
