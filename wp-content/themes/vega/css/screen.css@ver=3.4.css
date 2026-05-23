@@ -5670,3 +5670,6 @@ h1.product_title
 {
 	top: 2px;
 }
+
+/* Hide non-functional WordPress search (static GitHub Pages cannot honor ?s= queries). Delete this block to restore. */
+#searchform { display: none !important; }
